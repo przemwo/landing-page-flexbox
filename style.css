@@ -1,0 +1,172 @@
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: 'Lato', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+p {
+    margin: 0 0 1em 0;
+    text-align: justify;
+}
+
+
+/* MAIN */
+#main {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 2em 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    #main {
+        padding: 2em 3em;
+    }
+}
+
+#main h2 {
+    margin: 0 0 1em 0;
+    padding: 0 0 0.5em 0;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    letter-spacing: 0.25em;
+    border-bottom: 2px solid #000000;
+}
+
+#main content {
+    display: flex;
+    flex-direction: column;
+}
+
+#main content article {
+    order: 1;
+    padding: 1em;
+}
+
+#main content article h3 {
+    font-size: 1.5em;
+    line-height: 1em;
+    margin: 0 0 1rem 0;
+}
+
+@media screen and (min-width: 1024px) {
+    #main content {
+        flex-direction: row;
+    }
+    #main content article {
+        flex-basis: 50%;
+        order: 0;
+    }
+}
+
+
+/* GALLERY */
+.gallery {
+    flex-grow: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery-item {
+    position: relative;
+    flex-basis: 100%;
+    padding: 1em;
+    height: 150px;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery-item h4 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #ffffff;
+    transition: transform 0.3s ease-in-out;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+.gallery-item:hover h4 {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: #ffcc00;
+    margin: 1em;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out; 
+}
+.overlay.red {
+    background-color: #ff0000;
+}
+.overlay.green {
+    background-color: #00ff00;
+}
+.overlay.blue {
+    background-color: #0000ff;
+}
+.overlay.gray {
+    background-color: #3b3b3b;
+}
+.gallery-item:hover .overlay {
+    opacity: 0.7;
+}
+
+@media screen and (min-width: 768px) {
+    .gallery-item {
+        height: 200px;
+    }
+}
+@media screen and (min-width: 768px) {
+    .gallery-item {
+        flex-basis: 50%;
+    }
+}
+
+
+/* FOOTER */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3em 0;
+    background-color: #666666;
+    color: #ffffff;
+}
+
+footer a {
+    color: #ffffff;
+    opacity: 0.7;
+    transition: opacity 0.2s ease-in-out;
+}
+footer a:hover {
+    opacity: 1;
+}
+
+footer ul {
+    display: flex;
+    margin: 0 0 2em 0;
+}
+
+footer ul li {
+    margin: 0 6px;
+}
